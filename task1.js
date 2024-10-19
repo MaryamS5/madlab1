@@ -63,6 +63,6 @@ const { a, b } = fish;
 console.log(a)         // Logs: 1
 
 // Spread Operator
-const person = { name : 'aatiqa' , age :16, isMarried : false};
+const person = { name : 'sarah' , age :16, isMarried : false};
 const person2 = {...person , salary: 700000};
-console.log(person2);      // Logs: {name: "aatiqa", age: 16, isMarried: false, salary: 700000}
+console.log(person2);      // Logs: {name: "sarah", age: 16, isMarried: false, salary: 700000}
