@@ -1,45 +1,29 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import DoctorInfo from './components/doctorinfo';
-import searchbar from './components/searchbar';
 
 
-export default function App() {
- return (
-    <View style={styles.container}>
-      {/* Search Bar */}
-      <searchbar />  {/* Corrected component usage (capitalize first letter) */}
+import { NavigationContainer } from '@react-navigation/native';
 
-      <Text style={styles.heading}>Let's find your doctor</Text>
 
-      {/* Rendering doctors manually */}
-      <View style={styles.cardContainer}>
-        <DoctorInfo name="Dr. John Smith" specialty="Dermatologist" rating={4.9} />
-        <DoctorInfo name="Dr. Anna Dinn" specialty="Psychologist" rating={4.9} />
-      </View>
-      <View style={styles.cardContainer}>
-        <DoctorInfo name="Dr. Angela Rayez" specialty="Therapist" rating={4.8} />
-        <DoctorInfo name="Dr. Chris Bronte" specialty="Dentist" rating={5.0} />
-      </View>
-    </View>
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import MyCardComponent from './components/AssetExample.js';  // Adjust the path if needed
+import {homesrc} from "./components/home.jsx";
+import{notifi} from "./components/notfiction.jsx";
+export default function  App () {
+  const Stack =createNativeStackNavigation();
+  return (
+    <NavigationContainer>
+<Stack.Navigator initialRouteName="home">
+
+<Stack.Screen name= 'home' component={homescr}/>
+
+<Stack.Screen name= 'notification' component={notifi}/>
+
+
+
+
+</Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'lightgray',
-    padding: 16,
-  },
-  heading: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 15,
-    padding: 12,
-  },
-  cardContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 10,
-  },
-});
+export default App;
